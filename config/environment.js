@@ -43,5 +43,15 @@ module.exports = function(environment) {
 
   }
 
+  //Content Security Policies for Maps
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-eval' cdn.leafletjs.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'connect-src': "'self' maps.gstatic.com",
+    'img-src': "'self' *.tile.osm.org cdn.leafletjs.com api.mapbox.com data:",
+    'style-src': "'self' 'unsafe-inline' cdn.leafletjs.com"
+  };
+
   return ENV;
 };

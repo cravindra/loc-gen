@@ -1,0 +1,53 @@
+<div class="map-control-top-right">
+  {{#if isExpanded}}
+      <div class="map-control-container pull-right container-fluid">
+          <div class="row">
+              <button class="pull-right btn btn-danger" {{action "toggleExpanded"}}> {{fa-icon "times"}} </button>
+          </div>
+          <div class="row">
+              <form class="form-horizontal">
+                  <fieldset>
+
+                      <!-- SW input-->
+                    {{loc-input loc-id="swBound" name="swBound" placeholder="12.345,78.902" label="SW Bound"}}
+
+                      <!-- NE input-->
+                    {{loc-input loc-id="neBound" name="neBound" placeholder="23.567,103.768" label="NE Bound"}}
+
+
+                      <!-- Number input-->
+                      <div class="form-group">
+                          <label class="col-md-3  control-label" for="number">Number</label>
+
+                          <div class="col-md-7">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="basic-addon1">#</span>
+                                  <input id="number" name="number" type="text" placeholder="1-1000"
+                                         class="form-control input-md">
+                              </div>
+                              <span class="help-block">Large values may make browser freeze temporarily!</span>
+                          </div>
+                      </div>
+
+                      <!-- Button (Double) -->
+                      <div class="form-group">
+                          <div class="col-md-5 col-md-offset-5 col-xs-12">
+                              <button id="btn-randomize" name="btn-randomize" class="btn btn-primary">Randomize
+                              </button>
+                              <button id="btn-clear" name="btn-clear" class="btn btn-warning">Clear</button>
+                          </div>
+                      </div>
+
+                  </fieldset>
+              </form>
+          </div>
+      </div>
+  {{else}}
+      <div class="pull-right container">
+          <div class="row">
+              <button class="pull-right btn btn-info" {{action "toggleExpanded"}}> {{fa-icon "cog" size=2}}  </button>
+          </div>
+      </div>
+
+  {{/if}}
+</div>

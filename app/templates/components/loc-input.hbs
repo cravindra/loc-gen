@@ -1,0 +1,19 @@
+<label class="col-md-3 control-label" for={{loc-id}}>{{label}}</label>
+
+<div class="col-md-7">
+    <div class="input-group">
+        <span class="input-group-addon">{{fa-icon "map-marker" }}</span>
+      {{input id=loc-id name=name value=value type="text" placeholder=placeholder class="form-control input-md" focus-out="validate"}}
+    </div>
+  {{#if isDirty}}
+    {{#if isValid}}
+        <span class="form-control-feedback" aria-hidden="true">{{fa-icon "check"}} </span>
+    {{else}}
+        <span class="form-control-feedback" aria-hidden="true">{{fa-icon "exclamation-triangle"}} </span>
+        <span class="text-danger" aria-hidden="true">{{errorText}}</span>
+    {{/if}}
+  {{else}}
+      <span class="help-block">lat,lng</span>
+  {{/if}}
+
+</div>
